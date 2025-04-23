@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+ 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,19 +22,20 @@ function Login() {
   };
 
   
-  const login = ()=>{
-   
-   
-    localStorage.setItem('login',false)
-    navigate('/')
-  }
+  const login = () => {
+    // Set a session cookie that expires in 2 minutes
+    document.cookie = `session=true; max-age=${60*60*2}; path=/`;
+
+    // Navigate to the home page
+    navigate('/');
+};
   const navigate = useNavigate();
-  useEffect(()=>{
-          let login = localStorage.getItem('login' )
-          if (!login){
-              navigate('/')
-          }
-      })
+  // useEffect(()=>{
+  //         let login = localStorage.getItem('login' )
+  //         if (!login){
+  //             navigate('/')
+  //         }
+  //     })
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 px-4">
