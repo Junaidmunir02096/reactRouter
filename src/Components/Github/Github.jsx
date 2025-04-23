@@ -21,7 +21,7 @@ function Github() {
   )
 }
 export default Github
-
+//this is github
 export const GithubInfoLoader =async ()=>{
     // const response = await fetch('https://api.github.com/users/hiteshchoudhary')
     const response = await fetch('https://api.github.com/users/Junaidmunir02096')
